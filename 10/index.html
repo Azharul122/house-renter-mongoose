@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isPalindrome(str) {
+        const cleanNoneAlphabet = str
+          .replace(/[^a-zA-Z0-9]/g, "")
+          .toLowerCase();
+        console.log(cleanNoneAlphabet);
+
+        const separateAlphbate = cleanNoneAlphabet.split("");
+        console.log(separateAlphbate);
+        const reverseString = separateAlphbate.reverse();
+        console.log(reverseString);
+        const joinReversedString = reverseString.join("");
+        console.log(joinReversedString);
+
+        return cleanNoneAlphabet === joinReversedString;
+      }
+
+      console.log(isPalindrome("level")); // Output: true
+      console.log(isPalindrome("A man, a plan, a canal, Panama")); // Output: true
+      console.log(isPalindrome("hello")); // Output: false
+    </script>
+  </body>
+</html>
